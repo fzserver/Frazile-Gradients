@@ -1,0 +1,29 @@
+os:
+  - linux
+sudo: false
+addons:
+  apt:
+    # Flutter depends on /usr/lib/x86_64-linux-gnu/libstdc++.so.6 version GLIBCXX_3.4.18
+    sources:
+      - ubuntu-toolchain-r-test # if we don't specify this, the libstdc++6 we get is the wrong version
+    packages:
+      - libstdc++6
+      - fonts-droid-fallback
+env:
+  - FLUTTER_VERSION=beta
+before_script:
+  - git clone https://github.com/flutter/flutter.git -b $FLUTTER_VERSION
+  - ./flutter/bin/flutter doctor
+  - chmod +x travisScript.sh
+script:
+  - ./travisScript.sh
+  # - ./flutter/bin/flutter test
+cache:
+  directories:
+    - $HOME/.pub-cache
+notifications:
+  email: frazile.com@gmail.com
+
+# Only building master means that we don't run two builds for each pull request.
+branches:
+  only: [master]
