@@ -10,7 +10,7 @@ class ServiceCaller {
     try {
       // var result = await _loadGradientAsset();
       String url = Frazile.baseURL + Frazile.gradientsURL;
-      print(url);
+      print('URL = ' + url);
       var result = await _dio.get(url);
       gradients = GradientResponse.fromJson(result.data);
       return gradients;
