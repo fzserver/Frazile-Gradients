@@ -16,6 +16,7 @@ class HomeBloc {
       print('Bloc Online = ' + isOnline.toString());
     else
       print('Bloc Online = ' + isOnline.toString());
+
     try {
       ServiceManager sm = ServiceManager();
       List<GradientData> gradients = await sm.fetchGradients();

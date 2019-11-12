@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:frazilegradients/constants/frazile.dart';
 import 'package:frazilegradients/db/DBManager.dart';
 import 'package:frazilegradients/pages/config/configPage.dart';
 import 'package:frazilegradients/services/connectionStatus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'constants/frazile.dart';
 
 Future<void> main() async {
   ConnectionStatus connectionStatus = ConnectionStatus.getInstance();
