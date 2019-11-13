@@ -13,12 +13,11 @@ class DBManager {
   initDb() async {
     DBProvider dbProvider = DBProvider.instance;
     db = await dbProvider.database;
-    print(db.toString());
   }
 
-  Future<int> saveGradients(GradientData gradients) async {
-    print(gradients.toJson().toString());
-    int result = await db.insert(Frazile.gradientTB, gradients.toJson());
-    return result;
-  }
+  // Future<int> saveGradients(GradientData gradients) async {
+  //   print(gradients.toJson().toString());
+  //   int result = await db.insert(Frazile.gradientTB, gradients.toJson());
+  //   return result;
+  // }
 }

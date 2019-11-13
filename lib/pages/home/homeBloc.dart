@@ -1,4 +1,3 @@
-import 'package:frazilegradients/services/connectionStatus.dart';
 import 'package:frazilegradients/services/manager.dart';
 import 'package:frazilegradients/services/responses.dart';
 import 'package:rxdart/rxdart.dart';

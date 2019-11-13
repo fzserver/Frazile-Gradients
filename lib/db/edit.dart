@@ -5,7 +5,6 @@ import 'package:frazilegradients/services/responses.dart';
 class EditDB {
   // Insert Values in Gradients Table
   Future<int> saveGradients(GradientData gradients) async {
-    print(Frazile.gradientTB);
     int result =
         await DBManager.db.insert(Frazile.gradientTB, gradients.toJson());
     return result;

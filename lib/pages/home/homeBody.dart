@@ -3,7 +3,6 @@ import 'package:frazilegradients/constants/colors.dart';
 import 'package:frazilegradients/constants/frazile.dart';
 import 'package:frazilegradients/pages/color/colorArguments.dart';
 import 'package:frazilegradients/pages/config/configBloc.dart';
-import 'package:frazilegradients/pages/home/homeBloc.dart';
 import 'package:frazilegradients/services/responses.dart';
 
 class HomeBody extends StatefulWidget {
