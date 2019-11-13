@@ -15,17 +15,13 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
-  HomeBloc homeBloc = HomeBloc();
-
   @override
   void initState() {
-    homeBloc.fetchGradients();
     super.initState();
   }
 
   @override
   void dispose() {
-    homeBloc.dispose();
     super.dispose();
   }
 

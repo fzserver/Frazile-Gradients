@@ -1,5 +1,42 @@
 {
-    "gradients": [{
+    "gradients": [
+        {
+            "id": 74,
+            "name": "New Life",
+            "colors": [
+                "#43E97B",
+                "#38F9D7"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 73,
+            "name": "Malibu Beach",
+            "colors": [
+                "#4FACFE",
+                "#00F2FE"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 72,
+            "name": "Cloudy Knoxville",
+            "colors": [
+                "#FDFBFB",
+                "#EBEDEE"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
             "id": 71,
             "name": "Ripe Malinka",
             "colors": [

@@ -17,12 +17,12 @@ class ServiceManager {
       ConnectionStatus connectionStatus = ConnectionStatus.getInstance();
       bool isOnline = await connectionStatus.checkConnection();
       if (isOnline) gradients = await _sc.fetchGradients();
-      // if (gradients.gradients != null && gradients.gradients.length > 0)
-      // print(gradients.gradients.length);
-      // await Future.forEach(gradients.gradients, (gradient) async {
-      //   print(gradient.toString());
-      //   await db.saveGradients(gradient);
-      // });
+      if (gradients.gradients != null && gradients.gradients.length > 0)
+        // print(gradients.gradients.length);
+        await Future.forEach(gradients.gradients, (gradient) async {
+          print(gradient.toString());
+          await db.saveGradients(gradient);
+        });
       return gradients.gradients;
       // return await _readDB.getGradients();
     } catch (e) {

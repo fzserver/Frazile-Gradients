@@ -29,10 +29,13 @@ class DBProvider {
     Directory documentsDir = await getApplicationDocumentsDirectory();
     String path = join(documentsDir.path, 'fzgradients.db');
 
-    return await openDatabase(path,
-        version: Frazile.dbversion,
-        onOpen: (db) async {}, onCreate: (Database db, int version) async {
-      await db.execute(CreateTable.gradients);
-    });
+    return await openDatabase(
+      path,
+      version: Frazile.dbversion,
+      onOpen: (db) async {},
+      onCreate: (Database db, int version) async {
+        await db.execute(CreateTable.gradients);
+      },
+    );
   }
 }

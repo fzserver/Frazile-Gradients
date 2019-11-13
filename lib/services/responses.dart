@@ -40,7 +40,7 @@ class GradientData {
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name,
-        "colors": List<dynamic>.from(colors.map((color) => color)),
-        "stops": List<dynamic>.from(stops.map((stop) => stop)),
+        // "colors": List<dynamic>.from(colors.map((color) => color)),
+        // "stops": List<dynamic>.from(stops.map((stop) => stop)),
       };
 }

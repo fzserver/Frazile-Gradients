@@ -9,14 +9,6 @@ class HomeBloc {
   Observable<List<GradientData>> get gradients => gradientsBloc.stream;
 
   Future fetchGradients() async {
-    ConnectionStatus connectionStatus = ConnectionStatus.getInstance();
-    bool isOnline = await connectionStatus.checkConnection();
-
-    if (isOnline)
-      print('Bloc Online = ' + isOnline.toString());
-    else
-      print('Bloc Online = ' + isOnline.toString());
-
     try {
       ServiceManager sm = ServiceManager();
       List<GradientData> gradients = await sm.fetchGradients();

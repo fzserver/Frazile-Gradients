@@ -6,10 +6,7 @@ class CreateTable {
       Frazile.gradientTB +
       ''' (
     id int(100) PRIMARY KEY,
-    name varchar(200) NOT NULL,
-    color1 varchar(200) NOT NULL,
-    color2 varchar(200) NOT NULL,
-    color3 varchar(200) NOT NULL
+    name varchar(200) NOT NULL
     )
     ''';
 }
