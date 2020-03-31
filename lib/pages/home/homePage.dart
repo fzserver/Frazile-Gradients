@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frazilegradients/constants/colors.dart';
 import 'package:frazilegradients/constants/frazile.dart';
 import 'package:frazilegradients/pages/config/configBloc.dart';
-import 'package:frazilegradients/pages/home/homeBloc.dart';
 import 'package:frazilegradients/pages/home/homeBody.dart';
-import 'package:frazilegradients/services/responses.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 import 'package:share/share.dart';
 
@@ -14,8 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  HomeBloc homeBloc = HomeBloc();
-
   @override
   void initState() {
     homeBloc.fetchGradients();

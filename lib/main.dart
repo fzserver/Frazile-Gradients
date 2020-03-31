@@ -4,9 +4,8 @@ import 'package:frazilegradients/constants/frazile.dart';
 import 'package:frazilegradients/db/DBManager.dart';
 import 'package:frazilegradients/pages/config/configPage.dart';
 import 'package:frazilegradients/services/connectionStatus.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-Future<void> main() async {
+void main() {
   ConnectionStatus connectionStatus = ConnectionStatus.getInstance();
   connectionStatus.initialize();
   initilizeLocalDB();
@@ -22,7 +21,7 @@ Future<void> main() async {
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
   // * Get Shared Preference Instance for whole app
-  Frazile.prefs = await SharedPreferences.getInstance();
+  // Frazile.prefs = await SharedPreferences.getInstance();
 
   runApp(ConfigPage());
 }

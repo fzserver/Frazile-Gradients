@@ -1,6 +1,4 @@
-import 'package:frazilegradients/constants/frazile.dart';
 import 'package:frazilegradients/db/DBProvider.dart';
-import 'package:frazilegradients/services/responses.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DBManager {
