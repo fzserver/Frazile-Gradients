@@ -1,3 +1,5 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:frazilegradients/constants/colors.dart';
 import 'package:frazilegradients/constants/frazile.dart';
@@ -12,6 +14,8 @@ class ConfigPage extends StatefulWidget {
 }
 
 class _ConfigPageState extends State<ConfigPage> {
+  FirebaseAnalytics analytics = FirebaseAnalytics();
+
   @override
   void initState() {
     super.initState();
@@ -28,6 +32,9 @@ class _ConfigPageState extends State<ConfigPage> {
         create: (context) => GradientProvider(),
         child: MaterialApp(
           title: Frazile.appName,
+          navigatorObservers: [
+            FirebaseAnalyticsObserver(analytics: analytics),
+          ],
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             fontFamily: Frazile.googleFamily,

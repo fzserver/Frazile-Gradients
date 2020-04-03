@@ -27,6 +27,7 @@ dependencies:
   share: ^0.6.3+6
   provider: ^4.0.4
   http: ^0.12.0+4
+  firebase_analytics: ^5.0.11
 
 # App Packages from pub.dev only for debug mode for both Android & iOS
 dev_dependencies:
