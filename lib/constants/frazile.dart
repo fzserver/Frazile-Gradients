@@ -15,7 +15,7 @@ class Frazile {
   static const String gradientsURL = "/assets/data/gradients.json";
 
   //* DB Settings
-  static const int dbversion = 1;
+  static const int dbversion = 2;
   static const String gradientTB = "Gradients";
 
   //* Error Messages

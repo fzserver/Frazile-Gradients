@@ -49,12 +49,14 @@ class GradientProvider with ChangeNotifier {
   bool isLoading() => loading;
 
   void setGradients(GradientResponse value) async {
-    // int totalgradients = value.gradients.length;
+    int totalgradients = value.gradients.length;
+    print('Gradients => ' + totalgradients.toString());
     // for (int i = 0; i <= totalgradients; i++) {
     //   await editDB.saveGradients(value.gradients[i]);
     // }
     gradients = value.gradients;
     // gradients = await readDB.getGradients();
+
     notifyListeners();
   }
 
