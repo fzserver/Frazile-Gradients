@@ -14,16 +14,6 @@ class HomeBody extends StatefulWidget {
 
 class _HomeBodyState extends State<HomeBody> {
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) => AnimatedContainer(
         duration: Duration(milliseconds: 500),
         color: FzColors.canvasColor,

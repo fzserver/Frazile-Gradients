@@ -1,13 +1,17 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
+import 'package:frazilegradients/db/edit.dart';
+import 'package:frazilegradients/db/read.dart';
 import 'package:frazilegradients/models/gradients.dart';
 import 'package:frazilegradients/services/Gradientcaller.dart';
 import 'package:frazilegradients/services/connectionStatus.dart';
 
 class GradientProvider with ChangeNotifier {
-  GradientResponse gradients;
+  List<GradientData> gradients;
   String errorMessage;
   bool loading = false;
+  final EditDB editDB = EditDB();
+  final ReadDB readDB = ReadDB();
 
   Future<void> fetchGradient() async {
     setLoading(true);
@@ -44,12 +48,17 @@ class GradientProvider with ChangeNotifier {
   // It is checking whether data is fetched from the server or not yet.
   bool isLoading() => loading;
 
-  void setGradients(value) {
-    gradients = value;
+  void setGradients(GradientResponse value) async {
+    // int totalgradients = value.gradients.length;
+    // for (int i = 0; i <= totalgradients; i++) {
+    //   await editDB.saveGradients(value.gradients[i]);
+    // }
+    gradients = value.gradients;
+    // gradients = await readDB.getGradients();
     notifyListeners();
   }
 
-  GradientResponse getGradients() => gradients;
+  List<GradientData> getGradients() => gradients;
 
   void setMessage(value) {
     errorMessage = value;

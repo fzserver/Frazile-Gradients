@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
         body: Consumer<GradientProvider>(
           builder: (_, gradients, __) => gradientProvider.loading
               ? Center(child: Frazile().gradientLoader())
-              : HomeBody(gradients.getGradients().gradients),
+              : HomeBody(gradients.getGradients()),
         ));
   }
 }

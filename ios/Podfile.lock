@@ -31,7 +31,7 @@ DEPENDENCIES:
   - battery (from `.symlinks/plugins/battery/ios`)
   - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - connectivity_macos (from `.symlinks/plugins/connectivity_macos/ios`)
-  - Flutter (from `.symlinks/flutter/ios`)
+  - Flutter (from `Flutter`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
   - share (from `.symlinks/plugins/share/ios`)
@@ -53,7 +53,7 @@ EXTERNAL SOURCES:
   connectivity_macos:
     :path: ".symlinks/plugins/connectivity_macos/ios"
   Flutter:
-    :path: ".symlinks/flutter/ios"
+    :path: Flutter
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
   path_provider_macos:
@@ -84,6 +84,6 @@ SPEC CHECKSUMS:
   shared_preferences_web: 141cce0c3ed1a1c5bf2a0e44f52d31eeb66e5ea9
   sqflite: 4001a31ff81d210346b500c55b17f4d6c7589dd0
 
-PODFILE CHECKSUM: 097b64e1c00903a097fa4231dd174c10dfb3b629
+PODFILE CHECKSUM: bbcc3eb2160dd838fc79db1bfc6ae8efb8420fad
 
 COCOAPODS: 1.9.1
