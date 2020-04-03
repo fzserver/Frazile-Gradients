@@ -10,12 +10,14 @@ class GradientProvider with ChangeNotifier {
   bool loading = false;
 
   Future<void> fetchGradient() async {
-    setLoading(false);
+    setLoading(true);
     notifyListeners();
 
     await GradientCaller().fetchGradients().then((data) {
       if (data.statusCode == 200) {
         setGradients(GradientResponse.fromJson(json.decode(data.body)));
+        setLoading(false);
+        notifyListeners();
       } else {
         // Map<String, dynamic> result = json.decode(data.body);
         setMessage('Data Not Fetched!');

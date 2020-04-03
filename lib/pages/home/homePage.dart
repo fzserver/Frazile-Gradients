@@ -14,43 +14,35 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final gradientProvider = Provider.of<GradientProvider>(context);
+    final gradientProvider =
+        Provider.of<GradientProvider>(context, listen: false);
     gradientProvider.fetchGradient();
     return Scaffold(
-      appBar: GradientAppBar(
-        gradient: LinearGradient(
-            colors: FzColors()
-                .getColors(gradientProvider.getGradients().gradients)),
-        centerTitle: true,
-        title: Text(
-          Frazile.appName,
-          style: TextStyle(
-            fontSize: Frazile.appBarTitleSize,
-            letterSpacing: Frazile.appBarLetterSpacing,
+        appBar: GradientAppBar(
+          gradient: LinearGradient(
+            colors: FzColors().getLoaderColors(),
           ),
+          centerTitle: true,
+          title: Text(
+            Frazile.appName,
+            style: TextStyle(
+              fontSize: Frazile.appBarTitleSize,
+              letterSpacing: Frazile.appBarLetterSpacing,
+            ),
+          ),
+          actions: <Widget>[
+            IconButton(
+              onPressed: () => Share.share(
+                  "Download Frazile Gradients & share with your tech friends.\nPlayStore -  "),
+              icon: Icon(Icons.share),
+            ),
+          ],
         ),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () => Share.share(
-                "Download Frazile Gradients & share with your tech friends.\nPlayStore -  "),
-            icon: Icon(Icons.share),
-          ),
-        ],
-      ),
-      body: gradientProvider.loading
-          ? Center(child: Frazile().gradientLoader())
-          : HomeBody(gradientProvider.getGradients().gradients),
-    );
+        body: Consumer<GradientProvider>(
+          builder: (_, gradients, __) => gradientProvider.loading
+              ? Center(child: Frazile().gradientLoader())
+              : HomeBody(gradients.getGradients().gradients),
+        ));
   }
 }
