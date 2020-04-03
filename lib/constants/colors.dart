@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:frazilegradients/models/gradients.dart';
 // import 'package:frazilegradients/services/responses.dart';
 
 class FzColors {
@@ -30,11 +31,11 @@ class FzColors {
       colors.map((color) => FzColors().hexToColor(color)).toList();
 
   //* Get Random Gradient
-  // List<Color> getColors(List<GradientData> gradientData) =>
-  //     gradientData[Random.secure().nextInt(gradientData.length)]
-  //         .colors
-  //         .map((color) => FzColors().hexToColor(color))
-  //         .toList();
+  List<Color> getColors(List<GradientData> gradientData) =>
+      gradientData[Random.secure().nextInt(gradientData.length)]
+          .colors
+          .map((color) => FzColors().hexToColor(color))
+          .toList();
 
   //* Loader Colors
   List<Color> getLoaderColors() => FzColors().getListColors(

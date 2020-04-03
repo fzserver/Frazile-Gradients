@@ -9,8 +9,9 @@ class GradientProvider with ChangeNotifier {
   String errorMessage;
   bool loading = false;
 
-  Future<bool> fetchGradient() async {
-    setLoading(true);
+  Future<void> fetchGradient() async {
+    setLoading(false);
+    notifyListeners();
 
     await GradientCaller().fetchGradients().then((data) {
       if (data.statusCode == 200) {
@@ -20,7 +21,6 @@ class GradientProvider with ChangeNotifier {
         setMessage('Data Not Fetched!');
       }
     });
-    return true;
   }
 
   void setLoading(value) {
@@ -28,6 +28,7 @@ class GradientProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  // It is checking whether data is fetched from the server or not yet.
   bool isLoading() => loading;
 
   void setGradients(value) {

@@ -85,5 +85,6 @@ class Frazile {
   static const double gradientListTileTitleLetterSpacing = 3.0;
 
   //* Routes
+  static const String home = '/';
   static const String colorDetail = '/colorDetail';
 }

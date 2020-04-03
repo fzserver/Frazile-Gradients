@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:frazilegradients/constants/colors.dart';
 import 'package:frazilegradients/constants/frazile.dart';
+import 'package:frazilegradients/models/gradients.dart';
 import 'package:frazilegradients/pages/color/colorArguments.dart';
-import 'package:frazilegradients/pages/config/configBloc.dart';
 
 class HomeBody extends StatefulWidget {
   final List<GradientData> gradientData;
@@ -26,9 +26,7 @@ class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) => AnimatedContainer(
         duration: Duration(milliseconds: 500),
-        color: ConfigBloc().darkModeOn
-            ? FzColors.darkCanvasColor
-            : FzColors.canvasColor,
+        color: FzColors.canvasColor,
         child: ListView.separated(
           physics: BouncingScrollPhysics(),
           separatorBuilder: (context, index) => Divider(
