@@ -1,8 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:frazilegradients/models/gradients.dart';
 import 'package:frazilegradients/services/Gradientcaller.dart';
+import 'package:frazilegradients/services/connectionStatus.dart';
 
 class GradientProvider with ChangeNotifier {
   GradientResponse gradients;
@@ -13,9 +13,20 @@ class GradientProvider with ChangeNotifier {
     setLoading(true);
     notifyListeners();
 
+    ConnectionStatus connectionStatus = ConnectionStatus.getInstance();
+    bool isOnline = await connectionStatus.checkConnection();
+
     await GradientCaller().fetchGradients().then((data) {
       if (data.statusCode == 200) {
-        setGradients(GradientResponse.fromJson(json.decode(data.body)));
+        if (isOnline)
+          setGradients(
+            GradientResponse.fromJson(
+              json.decode(
+                data.body,
+              ),
+            ),
+          );
+        // set the loading to false
         setLoading(false);
         notifyListeners();
       } else {

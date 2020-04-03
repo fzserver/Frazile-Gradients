@@ -28,7 +28,6 @@ class DBProvider {
     // when the app is deleted.
     Directory documentsDir = await getApplicationDocumentsDirectory();
     String path = join(documentsDir.path, 'fzgradients.db');
-
     return await openDatabase(
       path,
       version: Frazile.dbversion,
