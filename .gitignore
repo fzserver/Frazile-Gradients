@@ -81,3 +81,8 @@ lib/pages/test/
 **/google-services.json
 **/GoogleService-Info.plist
 .flutter-plugins-dependencies
+
+# Certificates
+*.cer
+*.certSigningRequest
+*.mobileprovision

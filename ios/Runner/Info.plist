@@ -40,5 +40,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>custom message</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>custom message</string>
 </dict>
 </plist>
