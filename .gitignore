@@ -1,5 +1,6 @@
 # Miscellaneous
 *.class
+*.lock
 *.log
 *.pyc
 *.swp
@@ -15,10 +16,8 @@
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# Visual Studio Code related
+.vscode/
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -27,7 +26,9 @@
 .packages
 .pub-cache/
 .pub/
-/build/
+build/
+lib/pages/test/
+*.jks
 
 # Android related
 **/android/**/gradle-wrapper.jar
@@ -57,11 +58,12 @@
 **/ios/.generated/
 **/ios/Flutter/App.framework
 **/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.framework
 **/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
 **/ios/Flutter/app.flx
 **/ios/Flutter/app.zip
 **/ios/Flutter/flutter_assets/
-**/ios/Flutter/flutter_export_environment.sh
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
 
@@ -72,5 +74,15 @@
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
-# Android Key
-android/frazilegradients.jks
+# keys
+*keys/
+**key.properties
+.ui
+**/google-services.json
+**/GoogleService-Info.plist
+.flutter-plugins-dependencies
+
+# Certificates
+*.cer
+*.certSigningRequest
+*.mobileprovision
